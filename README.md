@@ -1,2 +1,5 @@
 # pinterest-layout
-This is the layout designed like pinterest and data is fetched from pinkvilla
+You need to configure PHP environment to develope this
+XAMPP
+WAMPP
+

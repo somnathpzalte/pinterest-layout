@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+  <title>Pinterest | HTML</title>
+  <meta name="Description" content="pinterest layout to display blog">
+  <meta name="Keywords" content="blog,pinterest,layout">
+
+ <link rel="stylesheet" type="text/css" href="assets/style.css">
+</head>
+<body>
+<div class="masonry-wrapper">
+    <div class="masonry" id="child-data">
+
+    </div>
+ 
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        var API_URL="getdata.php";
+         $.get("https://content.xynie.com/feed/fashion-section.json", function(data, status){
+			data.reverse();
+           for(var i=0;i<data.length;i++){
+              var htmldata = '<div class="masonry-item"><a href="http://www.pinkvilla.com'+data[i].path+'" target="_blank"><img src="'+data[i].imageUrl+'" class="masonry-content" alt="'+data[i].title+'" title="'+data[i].title+'"></a></div>';
+              $('#child-data').append(htmldata);
+            }
+         });
+    });
+    
+  </script>
+</body>
+</html>
